@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
         len_s1 = len(s1)
@@ -19,7 +20,7 @@ class Solution:
             window_count[s2[i]] += 1
             # Remove the old character from the window
             window_count[s2[i - len_s1]] -= 1
-            
+
             # If the count becomes zero, we remove it from the counter
             if window_count[s2[i - len_s1]] == 0:
                 del window_count[s2[i - len_s1]]
@@ -31,7 +32,7 @@ class Solution:
         return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution = Solution()
     s1 = "ab"
     s2 = "eidbaooo"

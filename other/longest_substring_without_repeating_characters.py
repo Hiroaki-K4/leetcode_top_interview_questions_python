@@ -5,11 +5,11 @@ class Solution:
         else:
             ans_len = 1
 
-        for i in range(len(s)-1):
+        for i in range(len(s) - 1):
             # Use a dictionary for speed
             exist = {}
             exist[s[i]] = 0
-            for j in range(i+1, len(s)):
+            for j in range(i + 1, len(s)):
                 if s[j] in exist:
                     break
                 else:
@@ -19,7 +19,7 @@ class Solution:
         return ans_len
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution = Solution()
     s = "abcabcbb"
     print("Input: s={0}".format(s))
