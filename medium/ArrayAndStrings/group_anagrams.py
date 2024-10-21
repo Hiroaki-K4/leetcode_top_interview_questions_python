@@ -29,7 +29,7 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    strs = ["eat","tea","tan","ate","nat","bat"]
+    strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
     print("Input: strs = {0}".format(strs))
     print("Output: {0}".format(solution.groupAnagrams(strs)))
     print()
