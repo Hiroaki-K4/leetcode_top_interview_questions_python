@@ -7,18 +7,14 @@ class Solution:
         Do not return anything, modify matrix in-place instead.
         """
         n = len(matrix)
-        for i in range(n // 2):
-            for j in range((n + 1) // 2):
-                # matrix[i][j] -> left-top,
-                # matrix[j][~i] -> right-top,
-                # matrix[~i][~j] -> right-bottom,
-                # matrix[~j][i] -> left-bottom
-                matrix[i][j], matrix[j][~i], matrix[~i][~j], matrix[~j][i] = (
-                    matrix[~j][i],
-                    matrix[i][j],
-                    matrix[j][~i],
-                    matrix[~i][~j],
-                )
+        # Step 1: Transpose the matrix
+        for i in range(n):
+            for j in range(i, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+        # Step 2: Reverse each row
+        for i in range(n):
+            matrix[i].reverse()
 
 
 if __name__ == "__main__":

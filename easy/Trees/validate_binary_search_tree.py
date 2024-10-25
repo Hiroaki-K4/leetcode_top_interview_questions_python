@@ -15,6 +15,6 @@ class Solution:
             return True
         if root.val <= larger_than or root.val >= smaller_than:
             return False
-        return self.isValidBST(
-            root.left, min(smaller_than, root.val), larger_than
-        ) and self.isValidBST(root.right, smaller_than, max(root.val, larger_than))
+        return self.isValidBST(root.left, root.val, larger_than) and self.isValidBST(
+            root.right, smaller_than, root.val
+        )

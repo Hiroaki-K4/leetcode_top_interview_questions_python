@@ -14,7 +14,6 @@ class Solution:
 
         # Create the root with the middle element
         root = TreeNode(nums[mid])
-        print("root: ", root.val)
 
         # Recursively build the left and right subtrees
         root.left = self.sortedArrayToBST(nums[:mid])

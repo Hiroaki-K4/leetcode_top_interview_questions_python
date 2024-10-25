@@ -5,24 +5,25 @@
 #         self.next = next
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        if head.next == None:
-            return None
+        # Create a dummy node that points to the head
+        dummy = ListNode(0)
+        dummy.next = head
 
-        # Find the size of the linked list
-        tmp = head
-        size = 0
-        while tmp:
-            size += 1
-            tmp = tmp.next
+        # Initialize two pointers, both start at the dummy node
+        first = dummy
+        second = dummy
 
-        # In case we have to remove the first node
-        if n == size:
-            return head.next
+        # Move first pointer n steps ahead
+        for _ in range(n):
+            first = first.next
 
-        # Delete target node
-        tmp = head
-        for i in range(size - n - 1):
-            tmp = tmp.next
-        tmp.next = tmp.next.next
+        # Move both first and second until first reaches the end of the list
+        while first.next:
+            first = first.next
+            second = second.next
 
-        return head
+        # Remove the nth node from the end
+        second.next = second.next.next
+
+        # Return the head of the updated list
+        return dummy.next
