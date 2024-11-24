@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
         if not digits:
@@ -34,3 +37,20 @@ class Solution:
         # Start backtracking from the first digit
         backtrack(0, "")
         return result
+
+
+if __name__ == "__main__":
+    solution = Solution()
+    digits = "23"
+    print("Input: digits = {0}".format(digits))
+    print("Output: {0}".format(solution.letterCombinations(digits)))
+    print()
+
+    digits = ""
+    print("Input: digits = {0}".format(digits))
+    print("Output: {0}".format(solution.letterCombinations(digits)))
+    print()
+
+    digits = "2"
+    print("Input: digits = {0}".format(digits))
+    print("Output: {0}".format(solution.letterCombinations(digits)))
