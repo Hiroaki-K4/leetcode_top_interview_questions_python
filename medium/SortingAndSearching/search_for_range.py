@@ -3,7 +3,7 @@ from typing import List
 
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        def findLeftIndex(nums, target):
+        def find_left_index(nums, target):
             left, right = 0, len(nums) - 1
             while left <= right:
                 mid = left + (right - left) // 2
@@ -13,7 +13,7 @@ class Solution:
                     right = mid - 1
             return left
 
-        def findRightIndex(nums, target):
+        def find_right_index(nums, target):
             left, right = 0, len(nums) - 1
             while left <= right:
                 mid = left + (right - left) // 2
@@ -23,8 +23,8 @@ class Solution:
                     right = mid - 1
             return right
 
-        left_index = findLeftIndex(nums, target)
-        right_index = findRightIndex(nums, target)
+        left_index = find_left_index(nums, target)
+        right_index = find_right_index(nums, target)
 
         # Verify if the target exists in the range
         if (
