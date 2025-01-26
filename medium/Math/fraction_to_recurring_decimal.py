@@ -27,8 +27,6 @@ class Solution:
         remainder_map = {}
 
         while remainder != 0:
-            print("remainder_map: ", remainder_map)
-            print(remainder, result)
             if remainder in remainder_map:
                 # Insert parentheses around the repeating part
                 result.insert(remainder_map[remainder], "(")
