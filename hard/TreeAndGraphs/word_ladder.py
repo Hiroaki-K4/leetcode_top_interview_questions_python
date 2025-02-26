@@ -53,3 +53,13 @@ if __name__ == "__main__":
     )
     print("Output: {0}".format(solution.ladderLength(beginWord, endWord, wordList)))
     print()
+
+    beginWord = "hit"
+    endWord = "cog"
+    wordList = ["hot", "dot", "dog", "lot", "log"]
+    print(
+        "Input: beginWord = {0}, endWord = {1}, wordList = {2}".format(
+            beginWord, endWord, wordList
+        )
+    )
+    print("Output: {0}".format(solution.ladderLength(beginWord, endWord, wordList)))
